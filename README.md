@@ -1,2 +1,2 @@
-# programacao-declarativa
- Estudo sobre o paradigma declarativo
+# Programacao Declarativa 📐
+ Estudo sobre o paradigma declarativo.
