@@ -1,4 +1,4 @@
-aprenda pent·gono
+aprenda pent√°gono
   repita 5 [pf 100 pd 72]
 fim
 
@@ -6,7 +6,15 @@ aprenda quadrado
   repita 4 [pf 100 pd 90]
 fim
 
-aprenda tri‚ngulo
+aprenda quadrado_espiral_1
+  repita 100 [pf cv pd 90]
+fim
+
+aprenda quadrado_espiral_2
+  repita 250 [pf cv pd 89]
+fim
+
+aprenda tri√¢ngulo
   repita 3 [pf 100 pd 120]
 fim
 
