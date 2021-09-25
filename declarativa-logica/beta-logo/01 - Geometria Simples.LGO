@@ -1,0 +1,12 @@
+aprenda pentágono
+  repita 5 [pf 100 pd 72]
+fim
+
+aprenda quadrado
+  repita 4 [pf 100 pd 90]
+fim
+
+aprenda triângulo
+  repita 3 [pf 100 pd 120]
+fim
+
