@@ -1,0 +1,13 @@
+aprenda tabuada :N
+  repita 10 [
+    escreva (lista :N "x cv "= :N * cv)
+  ]
+fim
+
+aprenda tunel :DISTANCIA :ANGULO
+  se (:DISTANCIA > 200) [ pare ]
+  pf :DISTANCIA
+  pd :ANGULO
+  tunel :DISTANCIA + 5 :ANGULO + 0.12
+fim
+
