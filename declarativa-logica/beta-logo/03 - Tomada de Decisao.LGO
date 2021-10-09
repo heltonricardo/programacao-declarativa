@@ -1,0 +1,33 @@
+aprenda flora :NUMERO
+  se (e 0 < :NUMERO :NUMERO < 8 ) [
+    floral_var :NUMERO
+  ][
+    escreva [Quantidade: mínima = 1, máxima = 7]
+  ]
+fim
+
+aprenda floral_var :QUANTIDADE
+  repita 8 [
+    repita :QUANTIDADE [
+      meio_circulo pd 90
+    ]
+    pd 45
+  ]
+fim
+
+aprenda idade :IDADE
+  se ( ou :IDADE = 18 :IDADE > 18 ) [
+    escreva [Você é maior de idade]
+  ]
+fim
+
+aprenda meio_circulo
+  repita 90 [ pf 1.5 pd 2 ]
+fim
+
+aprenda nome
+  coloque leiapalavra "N
+  esc sentença [Olá, ] :N
+fim
+
+Atribua "n "Helton
