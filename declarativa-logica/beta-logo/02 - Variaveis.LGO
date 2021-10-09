@@ -1,0 +1,39 @@
+aprenda circulo :TAMANHO
+  repita 180 [ pf 13 pd 2 ]
+fim
+
+aprenda circulos :TAMANHO
+  repita 24 [ repita 24 [ pf 30 pd 15 ] pd 15 ]
+fim
+
+aprenda flor
+  repita 8 [ petala pd 45 ]
+fim
+
+aprenda floral_var :QUANTIDADE
+  repita 8 [
+    repita :QUANTIDADE [
+      meio_circulo pd 90
+    ]
+    pd 45
+  ]
+fim
+
+aprenda meio_circulo
+  repita 90 [ pf 1.5 pd 2 ]
+fim
+
+aprenda petala
+  repita 90 [ pf 1 pd 1 ]
+  pd 90
+  repita 90 [ pf 1 pd 1 ]
+fim
+
+aprenda quadrado :TAMANHO
+  repita 4 [ pf :TAMANHO pd 90 ]
+fim
+
+aprenda quadrado_var :TAMANHO
+  repita 4 [ pf :TAMANHO pd 90 ]
+fim
+
