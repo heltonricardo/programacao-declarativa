@@ -21,3 +21,10 @@ aprenda ex03
 	]
 fim
 
+aprenda ex04
+	repita 9 [
+		repita 180 [ pf 1.5 pd 1 ]
+		pd 100
+	]
+fim
+
