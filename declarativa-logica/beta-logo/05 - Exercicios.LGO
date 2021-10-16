@@ -1,0 +1,7 @@
+aprenda ex01
+	repita 4 [
+		repita 180 [ pf 1.5 pd 1]
+		pd 90
+	]
+fim
+
