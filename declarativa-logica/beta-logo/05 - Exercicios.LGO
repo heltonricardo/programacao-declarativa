@@ -5,3 +5,12 @@ aprenda ex01
 	]
 fim
 
+aprenda ex02
+	repita 3 [
+		pf 100
+		pd 120
+		pf 70
+		pd 120
+	]
+fim
+
