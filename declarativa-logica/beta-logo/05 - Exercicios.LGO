@@ -14,3 +14,10 @@ aprenda ex02
 	]
 fim
 
+aprenda ex03
+	repita 3 [
+		repita 180 [ pf 1.5 pd 1 ]
+		pd 60
+	]
+fim
+
