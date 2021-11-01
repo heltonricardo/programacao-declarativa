@@ -1,0 +1,31 @@
+! Exercicio 01
+dec suc : num -> num;
+--- suc x <= x + 1;
+
+! Exercicio 02
+dec ant : num -> num;
+--- ant x <= x - 1;
+
+! Exercicio 03
+dec qsoma : num # num -> num;
+--- qsoma (a, b) <= pow(a + b, 2);
+
+! Exercicio 04
+dec cubo : num -> num;
+--- cubo x <= pow(x, 3);
+
+! Exercicio 05
+dec produto : num # num -> num;
+--- produto (x, y) <= x * y;
+
+! Exercicio 06
+dec imc : num # num -> num;
+--- imc (p, a) <= p / pow(a, 2);
+
+! Exercicio 07
+dec dolar : num # num -> num;
+--- dolar (real, valor) <= real / valor;
+
+! Exercicio 08
+dec squad : num # num -> num;
+--- squad (a, b) <= pow(a, 2) + pow(b, 2);
