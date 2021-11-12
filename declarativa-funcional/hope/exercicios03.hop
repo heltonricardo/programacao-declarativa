@@ -1,0 +1,11 @@
+! Exercicio 01
+(\x => x + 1) 10;
+
+! Exercicio 02
+(\(a, b) => pow(a + b, 2)) (2, 3);
+
+! Exercicio 03
+(\a => \b => pow(a +b, 2)) 2 3;
+
+! Exercicio 04
+(\(p, a) => p / pow(a, 2)) (90, 1.80);
