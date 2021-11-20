@@ -1,0 +1,57 @@
+! RECURSIVIDADE (PORTUGUÊS)
+
+! Exemplo 1 - Fatorial Simples
+! fat1 (número) >> número
+! fat1 (0) << 1
+! fat1 (n) << n * fat1(n - 1)
+
+! Exemplo 2 - Fibonacci Simples
+! fib1 (número) >> número
+! fib1 (0) << 0
+! fib1 (1) << 1
+! fib1 (n) << fib1(n - 1) + fib1(n - 2)
+
+! Exemplo 3 - Fatorial Cauda
+! fat2base (número, número) >> número
+! fat2base (0, p) << p
+! fat2base (n, p) << fat2base(n - 1, n * p)
+! fat2 (número) << número
+! fat2 (n) << fat2base(n, 1)
+
+! Exemplo 4 - Fibonacci Cauda
+! fib2base (número, número, número) >> número
+! fib2base (0, anter, atual) << anter
+! fib2base (1, anter, atual) << atual
+! fib2base (2, anter, atual) << atual + anter
+! fib2base (n, anter, atual) << fib2base(n - 1, atual, atual + anter)
+
+! ==========================================
+
+! RECURSIVIDADE (HOPE)
+
+! Exemplo 1 - Fatorial Simples
+dec fat1 : num -> num;
+--- fat1 0 <= 1;
+--- fat1 n <= n * fat1(n - 1);
+
+! Exemplo 2 - Fibonacci Simples
+dec fib1 : num -> num;
+--- fib1 0 <= 0;
+--- fib1 1 <= 1;
+--- fib1 n <= fib1(n - 1) + fib1(n - 2);
+
+! Exemplo 3 - Fatorial Cauda
+dec fat2base : num # num -> num;
+--- fat2base (0, p) <= p;
+--- fat2base (n, p) <= fat2base(n - 1, n * p);
+dec fat2 : num -> num;
+--- fat2 n <= fat2base(n, 1);
+
+! Exemplo 4 - Fibonacci Cauda
+dec fib2base : num # num # num -> num;
+--- fib2base (0, anter, atual) <= anter;
+--- fib2base (1, anter, atual) <= atual;
+--- fib2base (2, anter, atual) <= atual + anter;
+--- fib2base (n, anter, atual) <= fib2base(n - 1, atual, atual + anter);
+dec fib2 : num -> num;
+--- fib2 n <= fib2base(n, 0, 1);
