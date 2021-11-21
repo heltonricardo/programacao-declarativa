@@ -1,0 +1,24 @@
+! Exercicio 01
+dec pot1 : num # num -> num;
+--- pot1 (b, 0) <= 1;
+--- pot1 (b, e) <= b * pot1(b, e - 1);
+
+! Exercicio 02
+dec duplo_fat1 : num -> num;
+--- duplo_fat1 0 <= 1;
+--- duplo_fat1 1 <= 1;
+--- duplo_fat1 n <= n * duplo_fat1(n - 2);
+
+! Exercicio 03
+dec mdc : num # num -> num;
+--- mdc (a, b) <= if a mod b = 0
+                     then a div b
+				  else if b mod (a mod b) = 0
+                     then a mod b
+				  else
+				     mdc(b, a mod b);
+
+! Exercicio 04
+dec hanoi1 : num -> num;
+--- hanoi1 (1) <= 1;
+--- hanoi1 (n) <= 2 * hanoi1(n - 1) + 1;
