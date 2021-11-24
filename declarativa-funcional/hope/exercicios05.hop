@@ -1,0 +1,19 @@
+! Exercicio 05
+dec mult : num # num -> num;
+--- mult (0, n) <= 0;
+--- mult (m, n) <= n + mult(m - 1, n);
+
+! Exercicio 06
+dec somat1 : num -> num;
+--- somat1 1 <= 1;
+--- somat1 n <= n + somat1(n - 1);
+
+! Exercicio 07
+dec pell : num -> num;
+--- pell 0 <= 0;
+--- pell 1 <= 1;
+--- pell n <= 2 * pell(n - 1) + pell(n - 2);
+
+! Exercicio 08
+dec divide : num # num -> num;
+--- divide (n, d) <= if n >= d then 1 + divide(n - d, d) else 0;
