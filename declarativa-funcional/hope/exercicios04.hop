@@ -11,14 +11,10 @@ dec duplo_fat1 : num -> num;
 
 ! Exercicio 03
 dec mdc : num # num -> num;
---- mdc (a, b) <= if a mod b = 0
-                     then a div b
-				  else if b mod (a mod b) = 0
-                     then a mod b
-				  else
-				     mdc(b, a mod b);
+--- mdc (a, 0) <= a;
+--- mdc (a, b) <= mdc(b, a mod b);
 
 ! Exercicio 04
 dec hanoi1 : num -> num;
---- hanoi1 (1) <= 1;
---- hanoi1 (n) <= 2 * hanoi1(n - 1) + 1;
+--- hanoi1 1 <= 1;
+--- hanoi1 n <= 2 * hanoi1(n - 1) + 1;
