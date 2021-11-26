@@ -1,7 +1,9 @@
 ! Exercicio 05
 dec mult : num # num -> num;
 --- mult (0, n) <= 0;
---- mult (m, n) <= n + mult(m - 1, n);
+--- mult (m, n) <= if m > 0
+                   then n + mult(m - 1, n)
+                   else 0 - mult(0 - m, n);
 
 ! Exercicio 06
 dec somat1 : num -> num;
