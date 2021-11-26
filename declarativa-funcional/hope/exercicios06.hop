@@ -1,0 +1,22 @@
+! Exercicio 09
+dec somat2base : num # num -> num;
+--- somat2base (0, s) <= s;
+--- somat2base (n, s) <= somat2base(n - 1, n + s);
+dec somat2 : num -> num;
+--- somat2 n <= somat2base(n, 0);
+
+! Exercicio 10
+dec pot2base : num # num # num -> num;
+--- pot2base (b, 0, p) <= p;
+--- pot2base (b, e, p) <= pot2base(b, e - 1, b * p);
+dec pot2 : num # num -> num;
+--- pot2 (b, e) <= pot2base(b, e, 1);
+
+! Exercicio 11
+dec duplo_fat2base : num # num -> num;
+--- duplo_fat2base (0, p) <= p;
+--- duplo_fat2base (1, p) <= p;
+--- duplo_fat2base (n, p) <= duplo_fat2base(n - 2, n * p);
+dec duplo_fat2 : num -> num;
+--- duplo_fat2 n <= duplo_fat2base(n, 1);
+duplo_fat2(5);
