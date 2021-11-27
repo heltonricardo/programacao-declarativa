@@ -1,0 +1,21 @@
+! Exercicio 01
+dec mostra : list num -> list num;
+--- mostra (x :: xs) <= (x :: xs);
+
+! Exercicio 02
+! dec inverte : list num -> list num;
+! --- inverte [] <= [];
+! --- inverte [x] <= [x];
+! --- inverte (x :: xs) <= inverte xs :: x;
+
+! Exercicio 03
+dec qual_elemento : num # list num -> num;
+--- qual_elemento (n, x :: xs) <= if n = 1
+                                  then x
+                                  else qual_elemento(n - 1, xs);
+
+! Exercicio 04
+dec duplique : list num -> list num;
+--- duplique [] <= error("Lista vazia!");
+--- duplique [x] <= x :: x :: [];
+--- duplique (x :: xs) <= x :: x :: duplique xs;
