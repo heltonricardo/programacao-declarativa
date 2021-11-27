@@ -19,4 +19,3 @@ dec duplo_fat2base : num # num -> num;
 --- duplo_fat2base (n, p) <= duplo_fat2base(n - 2, n * p);
 dec duplo_fat2 : num -> num;
 --- duplo_fat2 n <= duplo_fat2base(n, 1);
-duplo_fat2(5);
