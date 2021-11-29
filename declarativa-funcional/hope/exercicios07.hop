@@ -1,21 +1,26 @@
 ! Exercicio 01
 dec mostra : list num -> list num;
---- mostra (x :: xs) <= (x :: xs);
+--- mostra [] <= [];
+--- mostra (x :: xs) <= x :: mostra xs;
 
 ! Exercicio 02
-! dec inverte : list num -> list num;
-! --- inverte [] <= [];
-! --- inverte [x] <= [x];
-! --- inverte (x :: xs) <= inverte xs :: x;
+dec inverte : list num -> list num;
+--- inverte [] <= [];
+--- inverte (x :: xs) <= inverte xs <> [x];
+
+! Exercicio 02 - Solução com recursão em cauda
+dec inverte2base : list num # list num -> list num;
+--- inverte2base ([], aux) <= aux;
+--- inverte2base (x :: xs, aux) <= inverte2base(xs, x :: aux);
+dec inverte2 : list num -> list num;
+--- inverte2 xs <= inverte2base(xs, []);
 
 ! Exercicio 03
 dec qual_elemento : num # list num -> num;
---- qual_elemento (n, x :: xs) <= if n = 1
-                                  then x
-                                  else qual_elemento(n - 1, xs);
+--- qual_elemento (1, x :: xs) <= x;
+--- qual_elemento (n, x :: xs) <= qual_elemento(n - 1, xs);
 
 ! Exercicio 04
 dec duplique : list num -> list num;
---- duplique [] <= error("Lista vazia!");
---- duplique [x] <= x :: x :: [];
+--- duplique [] <= [];
 --- duplique (x :: xs) <= x :: x :: duplique xs;
