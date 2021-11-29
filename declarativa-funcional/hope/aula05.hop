@@ -71,3 +71,13 @@ dec penultimo : list num -> num;
 --- penultimo (x :: xs) <= if tamanho xs = 1
                            then x
                            else penultimo xs;
+
+! ATENÇÃO: Recebendo um conjunto em uma função
+! É possível receber uma lista de duas maneiras:
+! (x :: xs) e xs
+! Quando recebemos da primeira forma, temos acesso ao primeiro elemento e a
+! cauda também, já da segunda forma, só temos acesso a lista como um todo!
+
+! Operadores de conjuntos:
+! elemento:: lista (adiciona o elemento ao inicio da lista)
+! lista <> lista (concatena duas listas)
