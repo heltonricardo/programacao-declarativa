@@ -1,0 +1,29 @@
+! Exercicio 05
+dec poe_final : num # list num -> list num;
+--- poe_final (n, []) <= [n];
+--- poe_final (n, x :: xs) <= x :: poe_final(n, xs);
+
+! Exercicio 06
+dec somalst : list num -> num;
+--- somalst [] <= 0;
+--- somalst (x :: xs) <= x + somalst xs;
+
+! Exercicio 07
+dec intervalo : num # num -> list num;
+--- intervalo (m, n) <= if m /= n
+                        then m :: intervalo(m + 1, n)
+                        else [n];
+
+! Exercicio 08
+dec lista_min : list num -> num;
+--- lista_min [x] <= x;
+--- lista_min (a :: b :: xs) <= if a < b 
+                             then lista_min(a :: xs)
+                             else lista_min(b :: xs);
+dec lista_max : list num -> num;
+--- lista_max [x] <= x;
+--- lista_max (a :: b :: xs) <= if a > b 
+                             then lista_max(a :: xs)
+                             else lista_max(b :: xs);
+dec lista_min_max : list num -> list num;
+--- lista_min_max xs <= [lista_min xs, lista_max xs];
