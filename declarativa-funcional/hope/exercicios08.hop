@@ -10,9 +10,9 @@ dec somalst : list num -> num;
 
 ! Exercicio 07
 dec intervalo : num # num -> list num;
---- intervalo (m, n) <= if m /= n
+--- intervalo (m, n) <= if m =< n
                         then m :: intervalo(m + 1, n)
-                        else [n];
+                        else [];
 
 ! Exercicio 08
 dec lista_min : list num -> num;
