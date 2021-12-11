@@ -4,8 +4,8 @@ dec poe_ultimo : num # list num -> list num;
 --- poe_ultimo (n, x :: xs) <= x :: poe_ultimo(n, xs);
 
 ! Exercicio 02
-uses a6;
-uses e7;
+uses aula06;
+uses exercicios07;
 dec divisores : num -> list num;
 --- divisores n <= inverte(comp(faixa(1, n, 1), \x => multiplo(n, x)));
 

@@ -3,11 +3,11 @@ dec div84 : num -> truval;
 --- div84 n <= n mod 8 = 4;
 
 ! Exercicio 08
-uses a6;
+uses aula06;
 dec lstdiv84 : num -> list num;
 --- lstdiv84 n <= comp(faixa(1, n, 1), div84);
 
 ! Exercicio 09
-uses e9;
+uses exercicios09;
 dec multip_faixa : num # num -> num;
 --- multip_faixa (x, y) <= produtolst(faixa(x, y, 1));

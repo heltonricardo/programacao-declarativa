@@ -1,5 +1,5 @@
-uses a6;
-uses e8;
+uses aula06;
+uses exercicios08;
 
 ! Exercicio 05
 dec amigos : num # num -> truval;
