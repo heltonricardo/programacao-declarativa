@@ -1,0 +1,19 @@
+! Exercicio 01
+dec poe_ultimo : num # list num -> list num;
+--- poe_ultimo (n, []) <= [n];
+--- poe_ultimo (n, x :: xs) <= x :: poe_ultimo(n, xs);
+
+! Exercicio 02
+uses a6;
+uses e7;
+dec divisores : num -> list num;
+--- divisores n <= inverte(comp(faixa(1, n, 1), \x => multiplo(n, x)));
+
+! Exercicio 03
+dec produtolst : list num -> num;
+--- produtolst [] <= 1;
+--- produtolst (x :: xs) <= x * produtolst(xs);
+
+! Exercicio 04
+dec faixa_primo : num # num -> list num;
+--- faixa_primo (n, m) <= comp(faixa(n, m, 1), checa_primo);
