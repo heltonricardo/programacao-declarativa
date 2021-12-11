@@ -1,0 +1,62 @@
+! LISTAS
+
+! Compreensão de lista (Português)
+! comp (lista número, ||número >> lógico||) >> lista número
+! comp ([], qualificador) << []
+! comp (x :: xs, qualificador) << se (qualificador (x))
+!                                 então x :: comp(xs, qualificador)
+!                                 senão comp(xs, qualificador)
+
+! Compreensão de lista (Hope)
+dec comp : list num # (num -> truval) -> list num;
+--- comp ([], func) <= [];
+--- comp (x :: xs, func) <= if func x
+                            then x :: comp(xs, func)
+                            else comp(xs, func);
+
+! Obs.: é preciso do código da aula a2.hop para alguns dos exemplos abaixo:
+uses a2;
+
+! uso: comp([1, 2, 3, 4, 5, 6, 7, 8, 9], \x => par x);
+
+! Função de potências de elementos de uma lista:
+dec listapot : num # list num -> list num;
+--- listapot (_, []) <= [];
+--- listapot (e, x :: xs) <= pow(x, e) :: listapot(e, xs);
+
+! Combinando três funções:
+! uso: comp(listapot(2, [1, 2, 3, 4, 5]), \x => impar x);
+
+! Função de multiplicidade:
+dec multiplo : num # num -> truval;
+--- multiplo (n, m) <= n mod m = 0;
+
+! Função que gera uma lista de números:
+dec faixa : num # num # num -> list num;
+--- faixa (i, f, p) <= if i =< f then i :: faixa(i + p, f, p) else [];
+
+! Função de divisibilidade:
+dec divisor : num -> list num;
+--- divisor (n) <= comp(faixa(1, n, 1), \x => multiplo(n, x));
+
+! Função que retorna quais números da lista são divisores de n:
+dec listadiv : list num # num -> list num;
+--- listadiv ([], n) <= [];
+--- listadiv (x :: xs, n) <= if n mod x = 0
+                              then x :: listadiv(xs, n)
+                              else listadiv(xs, n);
+
+! Funcão de divisibilidade 2:
+dec divisor2 : num -> list num;
+--- divisor2 n <= listadiv(faixa(1, n, 1), n);
+
+! Obs.: é preciso do código da aula a5.hop para alguns dos exemplos abaixo:
+uses a5;
+
+! Função para verificar se um número é primo:
+dec checa_primo : num -> truval;
+--- checa_primo n <= tamanho(divisor2 n) = 2;
+
+! Função que mostra os números primos menores ou iguais a N:
+dec lprimos : num -> list num;
+--- lprimos n <= comp(faixa(1, n, 1), \x => checa_primo x);
