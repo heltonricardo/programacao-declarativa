@@ -1,0 +1,11 @@
+uses a6;
+uses e8;
+
+! Exercicio 05
+dec amigos : num # num -> truval;
+--- amigos (x, y) <= y = somalst(divisor(x)) - x
+                     and x = somalst(divisor(y)) - y;
+
+! Exercicio 06
+dec abundante : num -> truval;
+--- abundante n <= n < somalst(comp(faixa(1, n div 2, 1), \x => multiplo(n, x)));
