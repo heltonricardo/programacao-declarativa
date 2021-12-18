@@ -1,0 +1,57 @@
+! RELAÇÕES ENTRE CONJUNTOS
+
+! PERTINÊNCIA
+dec membro : num # list num -> truval;
+--- membro (n, []) <= false;
+--- membro (n, x :: xs) <= if n = x then true else membro(n, xs);
+
+! UNIÃO
+dec juncao : list num # list num -> list num;
+--- juncao ([], []) <= [];
+--- juncao (xs, []) <= xs;
+--- juncao ([], ys) <= ys;
+--- juncao (x :: xs, ys) <= x :: juncao(xs, ys);
+
+dec unico : list num -> list num;
+--- unico [] <= [];
+--- unico (x :: xs) <= if membro(x, xs)
+                       then unico xs
+                       else x :: unico xs;
+
+dec inserir : num # list num -> list num;
+--- inserir (n, []) <= [n];
+--- inserir (n, x :: xs) <= if n =< x
+                            then n :: x :: xs
+                            else x :: inserir(n, xs);
+                            
+dec classifica : list num -> list num;
+--- classifica [] <= [];
+--- classifica (x :: xs) <= inserir(x, classifica xs);
+
+dec uniao : list num # list num -> list num;
+--- uniao (xs, ys) <= classifica(unico(juncao(xs, ys)));
+
+! INTERSECÇÃO
+dec interseccao : list num # list num -> list num;
+--- interseccao (xs, []) <= [];
+--- interseccao ([], ys) <= [];
+--- interseccao (xs, y :: ys) <= if membro(y, xs)
+                                 then y :: interseccao(xs, ys)
+                                 else interseccao(xs, ys);
+                               
+! DIFERENÇA
+dec diferenca : list num # list num -> list num;
+--- diferenca ([], ys) <= [];
+--- diferenca (x :: xs, ys) <= if membro(x, ys)
+                               then diferenca(xs, ys)
+                               else x :: diferenca(xs, ys);
+                               
+! IGUALDADE
+dec sub_lista : list num # list num -> truval;
+--- sub_lista ([], []) <= true;
+--- sub_lista ([], ys) <= true;
+--- sub_lista (xs, ys) <= false;
+--- sub_lista (x :: xs, ys) <= membro(x, ys) and sub_lista(xs, ys);
+
+dec igualdade : list num # list num -> truval;
+--- igualdade (xs, ys) <= sub_lista(xs, ys) and sub_lista(ys, xs);
