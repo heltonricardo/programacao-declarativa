@@ -1,0 +1,47 @@
+! PROCESSAMENTO DE SEQUÊNCIAS
+
+! MAPEAMENTO
+dec mapa : list num # (num -> num) -> list num;
+--- mapa ([], _) <= [];
+--- mapa (x :: xs, funcao) <= funcao x :: mapa(xs, funcao);
+! Uso:
+! mapa([1, 2, 3, 4, 5, 6, 7, 8, 9], \x => x * 3);
+! Ou o seguinte (equivalente ao de cima):
+! mapa([1,2,3,4,5,6,7,8,9], (*3));
+
+! FILTRAGEM
+dec filtro : list num # (num -> truval) -> list num;
+--- filtro ([], _) <= [];
+--- filtro (x :: xs, funcao) <= if funcao x
+                                then x :: filtro(xs, funcao)
+                                else filtro(xs, funcao);
+! Uso:
+! filtro([1, 2, 3, 4, 5, 6, 7, 8, 9], \x => x mod 2 = 0)
+
+! REDUÇÃO
+dec reducao : list num # (num # num -> num) # num -> num;
+--- reducao ([], _, n) <= n;
+--- reducao (x :: xs, funcao, n) <= funcao(x, reducao(xs, funcao, n));
+! Uso:
+! reducao([1, 2, 3, 4, 5, 6, 7, 8, 9], \(cur, acc) => cur + acc, 10);
+
+! CONVOLUÇÃO / COMPACTAÇÃO
+dec compacta : list num # list num -> list (num # num);
+--- compacta (xs, []) <= [];
+--- compacta ([], ys) <= [];
+--- compacta (x :: xs, y :: ys) <= (x, y) :: compacta(xs, ys);
+! Uso:
+! compacta([1, 1], [3, 8, 7]);
+
+! DECONVOLUÇÃO / DESCOMPACTAÇÃO
+dec oposto : list num -> list num;
+--- oposto [] <= [];
+--- oposto (x :: xs) <= oposto xs <> [x];
+dec dcp_base : list num # list num # list (num # num) -> list num # list num;
+--- dcp_base (xs, ys, []) <= (oposto xs, oposto ys);
+--- dcp_base (xs, ys, (x, y) :: zs) <= dcp_base(x :: xs, y :: ys, zs);
+dec descompacta : list (num # num) -> list num # list num;
+--- descompacta [] <= ([], []);
+--- descompacta xs <= dcp_base([], [], xs);
+! Uso:
+! descompacta [(1,4), (2,5), (3,6)];
