@@ -1,0 +1,21 @@
+uses aula6;  ! faixa() / listadiv()
+uses aula8;  ! filtro() / reducao() / mapa()
+
+! Exercicio 01
+uses exercicios10; ! abundante()
+dec labundante : num -> list num;
+--- labundante n <= filtro(faixa(1, n, 1), abundante);
+
+! Exercicio 02
+dec soma_impares : num -> num;
+--- soma_impares n <= reducao(faixa(1, n, 2), \(soma, atual) => soma + atual, 0);
+
+! Exercicio 03
+uses aula2; ! impar()
+dec quadrados : num # num -> list num;
+--- quadrados (n, m) <= mapa(filtro(faixa(n, m, 1), impar), \x => x * x);
+
+! Exercicio 04
+uses exercicios9; ! divisores()
+dec perfeito : num -> truval;
+--- perfeito n <= n = reducao(divisores n, \(soma, atual) => soma + atual, 0-n);
