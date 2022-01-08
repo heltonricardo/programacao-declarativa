@@ -1,0 +1,26 @@
+! Declarando função sem "dec" ou "---":
+soma : num -> num;
+soma n <= n + 1;
+
+! Declarando dois protótipos na mesma linha:
+dec funcaoA, funcaoB : num -> num;
+--- funcaoA n <= n * 2;
+--- funcaoB n <= n - 2;
+! A declaração pode ser na mesma linha, mas o conteúdo tem que ser separado.
+! Para declarar mais de uma função, é necessário o uso de "dec".
+! E quando a declaração é feito com "dec" , é necessário utilizar "---".
+
+! Importando arquivos
+! Além de "uses" também é possível usar "use".
+! É possível importar mais de um arquivo por linha, separando por vírgulas:
+! uses abc, xyz;
+
+! O tipo alpha: usado para deixar a função mais genérica:
+dec cabeca : list alpha -> alpha;
+--- cabeca [] <= error("Lista vazia!");
+--- cabeca (x :: xs) <= x;
+cabeca [5, 4, 3, 2, 1];
+cabeca ['e', 'd', 'c', 'b', 'a'];
+cabeca "helton";
+! Uma um vetor de caracteres também pode ser representado através de uma \
+! string, usando aspas inglesas/duplas.
