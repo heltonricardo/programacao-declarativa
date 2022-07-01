@@ -1,0 +1,14 @@
+! Exercício 1
+dec media : num # num # num # num # num -> num;
+--- media (a, b, c, d, e) <= (a + b + c + d + e) / 5;
+
+! Exercício 2
+! Alternativa A
+
+! Exercício 3
+dec repetir : num # alpha -> list alpha;
+--- repetir (0, x) <= [];
+--- repetir (n, x) <= x :: repetir(n - 1, x);
+
+! Exercício 4
+! Alternativa C
